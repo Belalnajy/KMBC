@@ -60,6 +60,10 @@ export default function Services() {
   const [mobileOpen, setMobileOpen] = useState<string | null>(null);
   const active = SERVICES[activeIdx];
 
+  const toggleMobile = (id: string) => {
+    setMobileOpen((prev) => (prev === id ? null : id));
+  };
+
   return (
     <section id="services" className="section-padding relative overflow-hidden">
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/[0.02] rounded-full blur-[120px]" />
@@ -76,67 +80,80 @@ export default function Services() {
         </ScrollReveal>
 
         {/* === MOBILE: Accordion cards === */}
-        <ScrollReveal className="lg:hidden">
-          <div className="space-y-3">
-            {SERVICES.map((service) => {
-              const isOpen = mobileOpen === service.id;
-              return (
-                <div key={service.id} className="rounded-md border border-border bg-card/30 overflow-hidden">
-                  <button
-                    onClick={() => setMobileOpen(isOpen ? null : service.id)}
-                    className="w-full flex items-center justify-between px-5 py-4 text-left cursor-pointer">
-                    <div className="flex items-center gap-3">
-                      <span className="text-accent/40 font-heading font-bold text-xs tracking-wider">
-                        {service.number}
-                      </span>
-                      <h3 className={`text-sm font-heading font-bold tracking-wide transition-colors duration-300 ${
-                        isOpen ? 'text-accent' : 'text-foreground'
-                      }`}>
-                        {service.title}
-                      </h3>
-                    </div>
-                    <motion.div
-                      animate={{ rotate: isOpen ? 45 : 0 }}
-                      transition={SPRING}
-                      className="w-7 h-7 flex items-center justify-center border border-accent/20 rounded-sm shrink-0 ml-3">
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="text-accent">
-                        <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                      </svg>
-                    </motion.div>
-                  </button>
-
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
+        <div className="lg:hidden">
+          <ScrollReveal>
+            <div className="space-y-3">
+              {SERVICES.map((service) => {
+                const isOpen = mobileOpen === service.id;
+                return (
+                  <div key={service.id} className="rounded-md border border-border bg-card/30">
+                    <button
+                      type="button"
+                      onClick={() => toggleMobile(service.id)}
+                      className="relative z-10 w-full flex items-center justify-between px-5 py-4 text-left cursor-pointer">
+                      <div className="flex items-center gap-3">
+                        <span className="text-accent/40 font-heading font-bold text-xs tracking-wider">
+                          {service.number}
+                        </span>
+                        <h3 className={`text-sm font-heading font-bold tracking-wide transition-colors duration-300 ${
+                          isOpen ? 'text-accent' : 'text-foreground'
+                        }`}>
+                          {service.title}
+                        </h3>
+                      </div>
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
+                        animate={{ rotate: isOpen ? 45 : 0 }}
                         transition={SPRING}
-                        className="overflow-hidden">
-                        <div className="px-5 pb-5">
-                          <div className="w-10 h-[2px] bg-accent mb-4" />
-                          <p className="text-text-secondary text-xs leading-relaxed mb-4">
-                            {service.description}
-                          </p>
-                          <a
-                            href="https://wa.me/96551227338"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-5 py-2 bg-accent text-[#0A1128] text-[10px] font-bold uppercase tracking-[0.15em] rounded-sm">
-                            Inquire Now
-                            <svg viewBox="0 0 20 20" fill="none" className="w-3.5 h-3.5">
-                              <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                          </a>
-                        </div>
+                        className="w-7 h-7 flex items-center justify-center border border-accent/20 rounded-sm shrink-0 ml-3 pointer-events-none">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="text-accent">
+                          <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        </svg>
                       </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
-        </ScrollReveal>
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          key={`content-${service.id}`}
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          style={{ overflow: 'hidden' }}>
+                          <div className="px-5 pb-5">
+                            <div className="relative w-full h-40 rounded-md overflow-hidden mb-4">
+                              <Image
+                                src={service.image}
+                                alt={service.title}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 1024px) 90vw"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                            </div>
+                            <p className="text-text-secondary text-xs leading-relaxed mb-4">
+                              {service.description}
+                            </p>
+                            <a
+                              href="https://wa.me/96551227338"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-5 py-2 bg-accent text-[#0A1128] text-[10px] font-bold uppercase tracking-[0.15em] rounded-sm">
+                              Inquire Now
+                              <svg viewBox="0 0 20 20" fill="none" className="w-3.5 h-3.5">
+                                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </a>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </div>
+          </ScrollReveal>
+        </div>
 
         {/* === DESKTOP: Tabs + Image panel === */}
         <ScrollReveal className="hidden lg:block">
