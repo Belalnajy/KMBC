@@ -7,7 +7,7 @@ import { useCallback, useRef } from 'react';
 const SPRING = { type: 'spring' as const, stiffness: 50, damping: 20 };
 
 export default function Hero() {
-  const headline = 'INTEGRATED TECHNICAL EXCELLENCE.';
+  const headline = 'PREMIUM TECHNICAL EXCELLENCE.';
   const words = headline.split(' ');
 
   const sectionRef = useRef<HTMLElement>(null);

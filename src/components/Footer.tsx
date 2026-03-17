@@ -43,7 +43,7 @@ export default function Footer() {
                   WhatsApp Us
                 </a>
                 <a
-                  href="tel:+96551227338"
+                  href="tel:+96551227339"
                   className="inline-flex items-center gap-2.5 px-8 py-3.5 border border-accent/30 text-accent text-xs font-bold uppercase tracking-[0.2em] rounded-sm hover:bg-accent/10 hover:border-accent/60 transition-all duration-300">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" strokeLinecap="round" strokeLinejoin="round" />
@@ -67,11 +67,11 @@ export default function Footer() {
             <ScrollReveal className="md:col-span-4">
               <div className="flex items-center gap-3 mb-5">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/KMBC-logo.png"
                   alt="KMBC Co."
-                  width={36}
-                  height={36}
-                  className="rounded"
+                  width={56}
+                  height={56}
+                  className="rounded-md bg-white/90 p-1.5 logo-copper-filter"
                 />
                 <div>
                   <span className="font-heading text-base font-bold tracking-wider text-accent">
@@ -83,12 +83,12 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-text-secondary text-sm leading-relaxed max-w-sm mb-5">
-                Kuwait Modern Buildings Construction Co. — Delivering integrated
+                Kuwait Modern Buildings Construction Co. — Delivering premium
                 technical excellence across industrial, residential, and civil
                 infrastructure projects.
               </p>
               <p className="text-muted text-[11px] tracking-[0.2em] uppercase">
-                Integrated Technical Excellence
+                Premium Technical Excellence
               </p>
             </ScrollReveal>
 
@@ -108,12 +108,12 @@ export default function Footer() {
                   </span>
                 </a>
 
-                <a href="tel:+96551227338" className="flex items-center gap-3 group/link">
+                <a href="tel:+96551227339" className="flex items-center gap-3 group/link">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4 text-accent/50 group-hover/link:text-accent flex-shrink-0 transition-colors">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   <span className="text-text-secondary text-sm group-hover/link:text-foreground transition-colors">
-                    (+965) 51227338
+                    (+965) 51227339
                   </span>
                 </a>
 

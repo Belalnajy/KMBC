@@ -2,14 +2,15 @@
 
 import { motion } from 'framer-motion';
 
-const PHONE = '96551227338';
+const WA_PHONE = '96551227338';
+const CALL_PHONE = '96551227339';
 
 export default function FloatingButtons() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
       {/* Call */}
       <motion.a
-        href={`tel:+${PHONE}`}
+        href={`tel:+${CALL_PHONE}`}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 50, damping: 15, delay: 2.2 }}
@@ -26,7 +27,7 @@ export default function FloatingButtons() {
 
       {/* WhatsApp */}
       <motion.a
-        href={`https://wa.me/${PHONE}`}
+        href={`https://wa.me/${WA_PHONE}`}
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0, opacity: 0 }}

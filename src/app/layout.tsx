@@ -19,7 +19,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'KMBC Co. — Kuwait Modern Buildings Construction',
   description:
-    'Integrated Technical Excellence. Precision engineering for industrial, residential, and civil infrastructure projects in Kuwait.',
+    'Premium Technical Excellence. Precision engineering for industrial, residential, and civil infrastructure projects in Kuwait.',
   keywords: [
     'KMBC',
     'Kuwait construction',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'KMBC Co. — Kuwait Modern Buildings Construction',
-    description: 'Integrated Technical Excellence.',
+    description: 'Premium Technical Excellence.',
     type: 'website',
   },
 };

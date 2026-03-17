@@ -150,6 +150,16 @@
     display: none;
   }
 
+  /* Logo Copper Filter — converts red/black logo to copper tones */
+  .logo-copper-filter {
+    filter: sepia(40%) saturate(120%) hue-rotate(340deg) brightness(90%) contrast(95%);
+    transition: filter 0.4s ease;
+  }
+
+  .logo-copper-filter:hover {
+    filter: sepia(30%) saturate(140%) hue-rotate(340deg) brightness(100%) contrast(100%);
+  }
+
   /* Grain Overlay */
   .grain-overlay::before {
     content: '';

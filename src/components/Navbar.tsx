@@ -34,11 +34,11 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-3 group">
           <Image
-            src="/images/logo.png"
+            src="/images/KMBC-logo.png"
             alt="KMBC Co."
-            width={48}
-            height={48}
-            className="rounded transition-transform duration-300 group-hover:scale-105"
+            width={72}
+            height={72}
+            className="rounded-md bg-white/90 p-1.5 logo-copper-filter transition-transform duration-300 group-hover:scale-105"
           />
           <div className="hidden sm:block">
             <span className="font-heading text-lg font-bold tracking-wider text-accent">
