@@ -67,8 +67,8 @@ export default function Footer() {
             <ScrollReveal className="md:col-span-4">
               <div className="flex items-center gap-3 mb-5">
                 <Image
-                  src="/images/KMBC-logo.png"
-                  alt="KMBC Co."
+                  src="/images/KMBC-logo-1.png"
+                  alt="Kuwait Modern Building Company logo"
                   width={56}
                   height={56}
                   className="rounded-md bg-white/90 p-1.5 logo-copper-filter"

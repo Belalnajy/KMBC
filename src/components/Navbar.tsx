@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
   { label: 'Services', href: '#services' },
   { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '#contact' }
 ];
 
 export default function Navbar() {
@@ -34,8 +34,8 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-3 group">
           <Image
-            src="/images/KMBC-logo.png"
-            alt="KMBC Co."
+            src="/images/KMBC-logo-1.png"
+            alt="Kuwait Modern Building Company logo"
             width={72}
             height={72}
             className="rounded-md bg-white/90 p-1.5 logo-copper-filter transition-transform duration-300 group-hover:scale-105"
