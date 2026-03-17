@@ -38,7 +38,7 @@ export default function Navbar() {
             alt="Kuwait Modern Building Company logo"
             width={72}
             height={72}
-            className="rounded-md bg-white/90 p-1.5 logo-copper-filter transition-transform duration-300 group-hover:scale-105"
+            className="rounded-md logo-copper-filter transition-transform duration-300 group-hover:scale-105"
           />
           <div className="hidden sm:block">
             <span className="font-heading text-lg font-bold tracking-wider text-accent">
