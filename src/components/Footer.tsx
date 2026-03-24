@@ -6,7 +6,7 @@ import ScrollReveal from './ScrollReveal';
 const QUICK_LINKS = [
   { label: 'Services', href: '#services' },
   { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Footer() {
@@ -153,6 +153,8 @@ export default function Footer() {
                   </svg>
                   <span className="text-text-secondary text-sm group-hover/link:text-foreground transition-colors">
                     (+965) 51227339
+                    <br />
+                    (+965) 51227338
                   </span>
                 </a>
 
